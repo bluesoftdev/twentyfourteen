@@ -3,7 +3,7 @@
 	{{ if isset .Data "Pages" }}
 	<h1 class="widget-title">Recent Posts</h1>
 		<ul>
-			{{ range first 5 (where .Data.Pages "Section" "post") }}
+			{{ range first 5 (where .Data.Pages "Type" "blog") }}
 			<li>
 				<a href="{{ .Permalink }}/index.html">{{ .Title }}</a>
 			</li>

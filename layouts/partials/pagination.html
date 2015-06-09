@@ -1,0 +1,19 @@
+{{ $pag := $.Paginator }}
+{{ if gt $pag.TotalPages 1 }}
+<nav class="navigation paging-navigation" role="navigation">
+	<h3 class="screen-reader-text">Posts navigation</h1>
+	<div class="pagination loop-pagination">
+      {{ with $pag.First }}
+        <a href="{{ .URL }}" class="first page-numbers" aria-label="First"><div alt="first" class="genericon genericon-rewind"></div></a> 
+      {{ end }}  
+      <a href="{{ if $pag.HasPrev }}{{ $pag.Prev.URL }}{{ end }}" class="page-numbers prev" aria-label="Previous"><div alt="first" class="genericon genericon-skip-back"></div></a>
+      {{ range $pag.Pagers }}
+        <a class="page-numbers{{ if eq . $pag }} current{{ end }}" href="{{ .URL }}">{{ .PageNumber }}</a>
+      {{ end }}
+      <a class="page-numbers next" href="{{ if $pag.HasNext }}{{ $pag.Next.URL }}{{ end }}" aria-label="Next"><div alt="first" class="genericon genericon-skip-ahead"></div></a>
+      {{ with $pag.Last }}
+        <a class="page-numbers last" href="{{ .URL }}" aria-label="Last"><div alt="Last" class="genericon genericon-fastforward"></div></a>
+      {{ end }}
+    </div>
+</nav>
+{{ end }}

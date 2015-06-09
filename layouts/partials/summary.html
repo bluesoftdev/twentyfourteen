@@ -13,7 +13,7 @@
 			</span>
 		</div>
 
-		<h1 class="entry-title">{{ .Title }}</h1>
+		<a href="{{ .URL }}"><h1 class="entry-title">{{ .Title }}</h1></a>
 
 		<div class="entry-meta">
 			<span class="entry-date">
@@ -28,7 +28,7 @@
 	</header>
 	
 	<div class="entry-content">
-		{{ .Content }}
+		{{ .Summary }}
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">

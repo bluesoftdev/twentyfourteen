@@ -1,17 +1,11 @@
 <div id="secondary">
-
-	{{ if isset .Site.Params "Description" }} 
-		{{ with .Site.Params.Description }}<h2 class="site-description">{{ . }}</h2>{{ end }}
-	{{ end }}
-
-	<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
-
-		{{ partial "searchform.html" . }}
-
-		{{ partial "recentposts.html" . }}
-
-		{{ partial "categories.html" . }}
-
-	</div>
-
+  {{ if isset .Site.Params "Description" }} 
+    {{ with .Site.Params.Description }}<h2 class="site-description">{{ . }}</h2>{{ end }}
+  {{ end }}
+  <div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+    {{ partial "searchform.html" . }}
+    {{ partial "recentposts.html" . }}
+    {{ partial "categories.html" . }}
+    {{ partial "social.html" . }}
+  </div>
 </div><!-- #secondary -->
