@@ -7,7 +7,7 @@
 		{{ range $key, $value := .Site.Taxonomies.tags }}
 		
 		<li class="cat-item">
-			<a href="/tags/{{ $key | urlize }}">{{ $key | title }}</a>
+			<a href="{{ $baseurl }}tags/{{ $key | urlize }}">{{ $key | title }}</a>
 		</li>
 
 		{{ end }}
