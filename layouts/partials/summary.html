@@ -3,21 +3,19 @@
 	<!-- .entry-header -->
 	<header class="entry-header">
 
-	{{ $baseurl := .Site.BaseURL }}
-
 		<div class="entry-meta">
 			<span class="cat-links">
-                {{ range .Params.categories }}
-                <a href="{{ $baseurl }}categories/{{ lower . | urlize }}/index.html" rel="category">{{ . }}</a>
-                {{ end }}
+        {{ range .Params.categories }}
+          <a href="/categories/{{ lower . | urlize }}" rel="category">{{ . }}</a>
+        {{ end }}
 			</span>
 		</div>
 
-		<a href="{{ .URL }}"><h1 class="entry-title">{{ .Title }}</h1></a>
+		<a href="{{ .RelPermalink }}"><h1 class="entry-title">{{ .Title }}</h1></a>
 
 		<div class="entry-meta">
 			<span class="entry-date">
-				<a href="{{ .Permalink }}/index.html" rel="bookmark">
+				<a href="{{ .RelPermalink }}" rel="bookmark">
 					<time class="entry-date" datetime="{{ .Date }}">
 						{{ .Date.Format "January 2, 2006" }}
 					</time>
@@ -34,8 +32,8 @@
 	<footer class="entry-meta">
 		<span class="tag-links">		
 			{{ range .Params.tags }}
-                <a href="{{ $baseurl }}tags/{{ lower . | urlize }}/index.html" rel="tag">{{ . }}</a>
-            {{ end }}
+        <a href="/tags/{{ lower . | urlize }}" rel="tag">{{ . }}</a>
+      {{ end }}
 		</span>
 	</footer>
 </article> <!-- #post-## -->
